@@ -15,9 +15,9 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
       - "They found that duration of sedentary bouts and the total number of steps were associated with readmissions. Their multifactorial model of Fitbit collected step counts and other patient activity was able to predict readmission in 88.3% of cases. The model that used only Fitbit collected step counts predicted readmission accurately only 67.1% of the time. In a follow-up study, the authors found that in 71 patients with metastatic peritoneal cancer, higher mean daily step counts were predictive of 30- and 60-day readmissions even after adjusting for other risk factors."
       
       
-      - Fitbit already has a library of research done with their devices: https://www.fitabase.com/research-library/
-      - A publication that points out challenges and solution for trials done by Fitbit: https://mhealth.jmir.org/2021/3/e25289/
-      - And third-party commercial data collection platforms already exist that help with accessing participant's data: Fitabit demo - https://www.youtube.com/watch?v=39_D35Q42p8 
+  - Fitbit already has a library of research done with their devices: https://www.fitabase.com/research-library/
+  - A publication that points out challenges and solution for trials done by Fitbit: https://mhealth.jmir.org/2021/3/e25289/
+  - And third-party commercial data collection platforms already exist that help with accessing participant's data: Fitabit demo - https://www.youtube.com/watch?v=39_D35Q42p8 
 
 
     - Personal tracking:

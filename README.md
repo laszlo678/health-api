@@ -28,6 +28,9 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
     https://accounts.fitbit.com/signup
     https://dev.fitbit.com/apps/new
     fill in with anything: ![image](https://github.com/laszlo678/health-api/assets/105205264/66449295-4c7b-4859-8c8b-13368375c980)
+    set up access token by clicking on 'OAuth 2.0 Tutorial': ![image](https://github.com/laszlo678/health-api/assets/105205264/f0336ff2-33ec-4cc5-82e8-a3b0d4a66313)
+
+
 
     see file: 1. fitbit.py for steps
 
@@ -56,11 +59,11 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
         6.3. visualize -> ask ChatGPT to visualize: panda, excel
         '''
 
-2. Google Health Connect:
+3. Google Health Connect:
      - Stores raw data from various health app in 1 place (Google Fit, Fitbit, Samsung Health, MyFitnessPal, Leap Fitness, Garmin, Strava...)
        ![image](https://github.com/laszlo678/health-api/assets/105205264/c351b4f3-8bda-4e92-a068-fd591b7d23b8)
 
-3. Google Fitness API - Google FIT
+4. Google Fitness API - Google FIT
      - now that all the data from our apps get written from one to another, we can get all of them from 1 place...Google
        (while we can, as Google is killing these left and right. some past examples: https://www.reddit.com/r/GoogleFit/comments/e8l8t8/any_way_to_view_google_fit_data_on_pc/?rdt=48629)
 

@@ -4,25 +4,20 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
 ----
 0. Why?
     - Wearables have positive health contributions.
-       https://www.jmir.org/2020/10/e23954/
-         -"Our final sample comprised 41 articles reporting the results of 37 studies. For Fitbit-based interventions, we found a **statistically significant increase in daily step count** and moderate-to-vigorous                       **physical activity **, a **significant decrease in weight **"
+    - https://www.jmir.org/2020/10/e23954/
+        - "Our final sample comprised 41 articles reporting the results of 37 studies. For Fitbit-based interventions, we found a **statistically significant increase in daily step count** and moderate-to-vigorous **physical activity**, a **significant decrease in weight** "
          - "setting activity goals was the most important intervention component."
      
            
     - Research: Wearables can track and predict health outcomes but only if done right
-        https://academic.oup.com/jamia/article/25/9/1221/5047137?login=false
-          - In 2018 out of 135 studies utilizing wearable technology in clinical outcome prediction* only 8 was relevant
-          - "They found that duration of sedentary bouts and the total number of steps were associated with readmissions.13
-                Their multifactorial model of Fitbit collected step counts and other patient activity was able to predict readmission in 88.3% of cases.13
-                The model that used only Fitbit collected step counts predicted readmission accurately only 67.1% of the time.13
-                In a follow-up study, the authors found that in 71 patients with metastatic peritoneal cancer, higher mean daily step counts were predictive of 30- and 60-day
-                readmissions even after adjusting for other risk factors."
-          
-              *study that derived a model predicting mortality, readmissions, and/or ED visits that incorporated data from any wearable technology.)
-
-        Fitbit already has a library of research done with their devices: https://www.fitabase.com/research-library/
-        Publications that point out challenges and solution for trials done by Fitbit: https://mhealth.jmir.org/2021/3/e25289/
-        And third-party commercial data collection platforms already exist that help with accessing participant's data: Fitabit demo - https://www.youtube.com/watch?v=39_D35Q42p8 
+    - https://academic.oup.com/jamia/article/25/9/1221/5047137?login=false
+      - In 2018 out of 135 studies utilizing wearable technology in clinical outcome prediction* only 8 was relevant (studies that derived a model predicting mortality, readmissions, and/or ED visits that incorporated data from any wearable technology.)
+      - "They found that duration of sedentary bouts and the total number of steps were associated with readmissions. Their multifactorial model of Fitbit collected step counts and other patient activity was able to predict readmission in 88.3% of cases. The model that used only Fitbit collected step counts predicted readmission accurately only 67.1% of the time. In a follow-up study, the authors found that in 71 patients with metastatic peritoneal cancer, higher mean daily step counts were predictive of 30- and 60-day readmissions even after adjusting for other risk factors."
+      
+      
+      - Fitbit already has a library of research done with their devices: https://www.fitabase.com/research-library/
+      - A publication that points out challenges and solution for trials done by Fitbit: https://mhealth.jmir.org/2021/3/e25289/
+      - And third-party commercial data collection platforms already exist that help with accessing participant's data: Fitabit demo - https://www.youtube.com/watch?v=39_D35Q42p8 
 
 
     - Personal tracking:
@@ -35,7 +30,7 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
     https://dev.fitbit.com/apps/new
     fill in with anything: ![image](https://github.com/laszlo678/health-api/assets/105205264/66449295-4c7b-4859-8c8b-13368375c980)
 
-   _ see file: 1. fitbit.py for steps_
+    see file: 1. fitbit.py for steps
 
        '''
         1. register for fitbit account: https://accounts.fitbit.com/signup

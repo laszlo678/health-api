@@ -1,9 +1,12 @@
 # health-api
-How to get personal data from Fitbit -> Google Fit through Fitness api for WEB API / Desktop app
+How to get personal data from Fitbit + Google Fit through Fitness API for WEB API / Desktop app
+
+Install Fitbit on phone -> generate some data!
+Install Google Fit on your phone -> generate some data
 
 ----
 0. Why?
-    - Wearables have positive health contributions.
+    - Wearables have positive health contributions (BUT unorganized raw data doesn't help healthcare professionals!)
     - https://www.jmir.org/2020/10/e23954/
         - "Our final sample comprised 41 articles reporting the results of 37 studies. For Fitbit-based interventions, we found a **statistically significant increase in daily step count** and moderate-to-vigorous **physical activity**, a **significant decrease in weight** "
          - "setting activity goals was the most important intervention component."
@@ -23,7 +26,7 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
         Research platforms are not free, but I still want to analyse my data.
          
 1. Let's start with Fitbit
-    - why? You can do your own market research (which OS, which device, which brand, which app) it's just not the scope of this :D
+    - why Fitbit? You can do your own market research (which OS, which device, which brand, which app) it's just not the scope of this :D
 
     https://accounts.fitbit.com/signup
     https://dev.fitbit.com/apps/new
@@ -32,7 +35,7 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
 
 
 
-    see file: 1. fitbit.py for steps
+    **see file "1. fitbit.py" for steps + code**
 
        '''
         1. register for fitbit account: https://accounts.fitbit.com/signup
@@ -59,14 +62,80 @@ How to get personal data from Fitbit -> Google Fit through Fitness api for WEB A
         6.3. visualize -> ask ChatGPT to visualize: panda, excel
         '''
 
-3. Google Health Connect:
-     - Stores raw data from various health app in 1 place (Google Fit, Fitbit, Samsung Health, MyFitnessPal, Leap Fitness, Garmin, Strava...)
+2. Google Health Connect:
+   - Stores raw data from various health app in 1 place (Google Fit, Fitbit, Samsung Health, MyFitnessPal, Leap Fitness, Garmin, Strava...)
        ![image](https://github.com/laszlo678/health-api/assets/105205264/c351b4f3-8bda-4e92-a068-fd591b7d23b8)
+   - Let's download the app, so we can integrate data from our Fitbit + Google Fit
+         https://play.google.com/store/apps/details?id=com.google.android.apps.healthdata
+     
 
-4. Google Fitness API - Google FIT
+3. Google Fitness API - Google FIT
      - now that all the data from our apps get written from one to another, we can get all of them from 1 place...Google
        (while we can, as Google is killing these left and right. some past examples: https://www.reddit.com/r/GoogleFit/comments/e8l8t8/any_way_to_view_google_fit_data_on_pc/?rdt=48629)
 
    3.1 Fitness API - Web application
+
+      **see file "3.1 Google Fit - Fintess API - Web.py" for steps + code"**
+
+        1. set-up: https://developers.google.com/fit/rest/v1/get-started
+        1.1 set-up Credential -> stay in Testing don't press Publish (you can invite up to 100 collaborators in this state as well)
+        1.2 set-up OAuth 2.0 client ID
+        2. Get Access-token from OAuth Playground when exchanging authorization code for tokens seen in  3.1 fitness api - access code.png 
+        3. set-up requests  = same as in 1. fitbit.py
+        3.1 what can we get from this API: https://developers.google.com/fit/rest/v1/reference
+        3.1.0 userID = me  <--- always!
+        3.1.1 -> let's see what dataSources there are. Replace down in the code the url with this url:
+            url = "https://www.googleapis.com/fitness/v1/users/me/dataSources"
+        
+            -> to be able to GET data from these sources we will need to add the "dataStreamID" NOT the "name" at the end of our urls (see later)
+            -> it is quite confusing, because in the documentation they only list the names, not the dataStreamIDs (https://developers.google.com/fit/datatypes/activity)
+            -> also we would need to use MERGE datasource (these IDs start with "derived", not "raw" -> this is important as thanks to Google Health Connect
+                the Fitness API is pulling data from all of our connected apps on our phone. So we want to list the aggregated data not just from 1 source
+            
+            -> BUT FIRST LET'S GET THE DATASOURCE SAVED IN AN EXCEL -> Use ChatGPT for example:
+                write: this is my json response I get, only print the dataStreamIDs, {insert the whole json object response that you get when you called the url}
+                write: also get back beside the dataStreamIDs the corresponding name that is given back in the dataType
+                write: let's save it to an excel where name is column A and id is B
+                -> adjust code to personal liking
+        
+                in command line install pandas - pip install panda
+        
+                SEE CODE BELOW -> comment out corresponding
+            
+        3.1.2 Now that we have the dataSourceIDs, let's call whichever by adding it to the end of the url
+            url = "https://www.googleapis.com/fitness/v1/users/me/dataSources/derived:com.google.step_count.delta:com.google.android.gms:merge_step_deltas"
+        
+            -> so this is the json format the we got here, not the data
+            -> if we want the actual data, we need to add at the end: /dataPointChanges
+            url = "https://www.googleapis.com/fitness/v1/users/me/dataSources/derived:com.google.step_count.delta:com.google.android.gms:merge_step_deltas/dataPointChanges"
+        
+        3.1.3 Let's get an excel where we get back the steps with dates
+        
+            SEE CODE BELOW -> comment out corresponding
+        
+            -> Visualize in excel -> Ask ChatGPT: 
+                "29-09-2023	21	51
+                29-09-2023	21	95
+                29-09-2023	21	88
+                29-09-2023	21	9
+                29-09-2023	21	74
+                29-09-2023	21	38
+                29-09-2023	21	22
+                29-09-2023	21	46
+                
+                This is my data
+        
+                I want a vba that adds together values in column c if in column b the values are same, and deletes the rows that it calculated from only keeping 1 row where the sum shows
+        
+                So for example:
+                29-09-2023	21	88
+                29-09-2023	21	9
+        
+                the end result would be this:
+                29-09-2023	21	98"
+        
+                -> F11 -> paste -> save ->F8 -> Run / Create a button for it in Excel Developer Module
+                
+                -> than in excel press F11 for instant chart view
    
    3.2 Fitness API - Desktop app

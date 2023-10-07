@@ -141,15 +141,16 @@ Install Fitbit + Google FIT on your phone -> generate some data!
                         -> than in excel press F11 for instant chart view
    
    3.2 Fitness API - Desktop app
-       3.2.1 set up similar as in 3.1.1 but (Under Application type, select Desktop app) + (Under redirect link write: http://localhost)
-       3.2.2 Set up authorization for a desktop app -> I have copied this from this youtube video's github as I have not found elsewhere: https://www.youtube.com/watch?v=irhhMLKDBZ8
-           3.2.2.1 download credentials to a credentials.json file
-           3.2.2.2 adjust scopes to your liking - more info: https://developers.google.com/fit/datatypes#authorization_scopes
+           """
+            3.2.1 set up similar as in 3.1.1 but (Under Application type, select Desktop app) + (Under redirect link write: http://localhost, leave url for javascript empty)
+            3.2.2 Set up authorization for a desktop app -> I have copied this from this youtube video's github as I have not found elsewhere: https://www.youtube.com/watch?v=irhhMLKDBZ8
+                3.2.2.1 download credentials to a credentials.json file
+                3.2.2.2 adjust scopes to your liking - more info: https://developers.google.com/fit/datatypes#authorization_scopes
+            3.2.3 Visualize as in 3.1
+        """
+                **see file "3.2 Google Fit - Fitness API - Desktop app.py" for code** 
 
-**         **see file "3.2 Google Fit - Fitness API - Desktop app.py" for code** 
-
-
-       3.2.3 Visualize as in 3.1
+  
 
 
         

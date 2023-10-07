@@ -73,7 +73,7 @@ Install Fitbit + Google FIT on your phone -> generate some data!
        (while we can, as Google is killing these left and right. some past examples: https://www.reddit.com/r/GoogleFit/comments/e8l8t8/any_way_to_view_google_fit_data_on_pc/?rdt=48629)
 
    3.1 Fitness API - Web application
-       -> this is easier to call than the 3.2 but you will need to go into the OAuth Playground to get the Access code -> harder to collaborate
+       -> this is easy to call but you will need to go into the OAuth Playground to get the Access code
 
       **see file "3.1 Google Fit - Fitness API - Web.py" for steps + code**
 
@@ -140,7 +140,7 @@ Install Fitbit + Google FIT on your phone -> generate some data!
                         
                         -> than in excel press F11 for instant chart view
    
-   3.2 Fitness API - Desktop app
+   3.2 Fitness API - Desktop app (EXTRA, no need for this, but FYI)
 
        """
             3.2.1 set up similar as in 3.1.1 but (Under Application type, select Desktop app) + (Under redirect link write: http://localhost, leave url for javascript empty)
@@ -154,5 +154,7 @@ Install Fitbit + Google FIT on your phone -> generate some data!
 **
   
 
+4. Fun project - https://ithoughthecamewithyou.com/post/export-google-fit-daily-steps-to-a-google-sheet
+   
 
         

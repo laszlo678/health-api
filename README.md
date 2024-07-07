@@ -30,7 +30,7 @@ Install Fitbit + Google FIT on your phone -> generate some data!
     https://accounts.fitbit.com/signup
     https://dev.fitbit.com/apps/new
     fill in with anything: ![image](https://github.com/laszlo678/health-api/assets/105205264/66449295-4c7b-4859-8c8b-13368375c980)
-    set up access token by clicking on 'OAuth 2.0 Tutorial': ![image](https://github.com/laszlo678/health-api/assets/105205264/f0336ff2-33ec-4cc5-82e8-a3b0d4a66313)
+    set up access token by clicking on 'OAuth 2.0 Tutorial': <img width="452" alt="1  fitbit get access token" src="https://github.com/laszlo678/health-api/assets/105205264/29eecdcf-e6c0-46e5-8991-e8dc6ed6dbd5">
 
 
 

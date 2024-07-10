@@ -1,0 +1,2 @@
+paste here the Access token if you are using the file:
+'- fitbit test - excel made nice'

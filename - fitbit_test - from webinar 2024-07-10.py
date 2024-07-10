@@ -12,7 +12,7 @@ from datetime import datetime
 
 url = "https://api.fitbit.com/1/user/-/activities/list.json?beforeDate=2024-07-11&sort=asc&offset=1&limit=100"
 
-Access_token = 'paste it here from 4.1'
+Access_token = 'paste it here from : https://dev.fitbit.com/apps/new'
 
 headers = {
     "accept": "application/x-www-form-urlencoded",

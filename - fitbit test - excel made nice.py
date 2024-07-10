@@ -6,7 +6,8 @@ from datetime import datetime
 url = "https://api.fitbit.com/1/user/-/activities/list.json?beforeDate=2024-07-09&sort=asc&offset=1&limit=100"
 
 
-# Define file path for access_token.txt (assuming it's in the same folder as this script)
+# Create a file in Windows, in the same folder location as this .py file called: access_token.txt 
+# when done, this line of code will run nicely
 token_file = os.path.join(os.path.dirname(__file__), 'access_token.txt')
 
 # Read access token from file
